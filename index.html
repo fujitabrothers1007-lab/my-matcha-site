@@ -98,9 +98,61 @@
     .package-note p {
       margin: 4px 0;
     }
+
+    /* Contact Form Styles */
+    .contact-form-container {
+      max-width: 700px;
+      margin: 0 auto;
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      border: 1px solid #eee;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .form-group {
+      margin-bottom: 20px;
+      text-align: left;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+      color: var(--primary);
+      font-size: 0.95rem;
+    }
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1rem;
+      box-sizing: border-box;
+      font-family: inherit;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 5px rgba(45, 90, 39, 0.3);
+    }
+    .submit-btn {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      padding: 14px 30px;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 100%;
+      transition: background-color 0.3s ease;
+    }
+    .submit-btn:hover {
+      background-color: #1e3d1a;
+    }
     
-    .step-list { padding-left: 20px; }
-    .contact-links { text-align: center; padding: 20px; background: #eef3eb; border-radius: 8px; }
+    .contact-links { text-align: center; padding: 20px; background: #eef3eb; border-radius: 8px; margin-top: 30px; }
     .contact-links a { margin: 0 10px; color: var(--primary); font-weight: bold; text-decoration: none; font-size: 1.1rem; }
   </style>
 </head>
@@ -115,8 +167,7 @@
       <a href="#">Home</a>
       <a href="#about">About</a>
       <a href="#products">Products</a>
-      <a href="#how-to-order">How to Order</a>
-      <a href="#contact">Contact</a>
+      <a href="#contact">Contact & Order</a>
     </nav>
   </header>
 
@@ -201,24 +252,43 @@
 
     </section>
 
-    <!-- How to Order -->
-    <section id="how-to-order">
-      <h2>How to Order</h2>
-      <ol class="step-list">
-        <li><strong>Select Items:</strong> Choose the product and quantity you wish to purchase.</li>
-        <li><strong>Send DM:</strong> Message us via Instagram DM or WhatsApp with your location.</li>
-        <li><strong>Invoice:</strong> We will reply with an estimate including international shipping.</li>
-        <li><strong>Payment & Shipping:</strong> Pay via PayPal or Credit Card. We ship promptly with tracking.</li>
-      </ol>
-    </section>
+    <!-- Contact & Order Form -->
+    <section id="contact">
+      <h2>Inquiry & Order Form</h2>
+      <p style="text-align: center; margin-bottom: 25px;">Please fill out the form below for orders, sample requests, or any inquiries. We will get back to you promptly.</p>
+      
+      <div class="contact-form-container">
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <div class="form-group">
+            <label for="name">Name / Company Name *</label>
+            <input type="text" id="name" name="name" required placeholder="John Doe / Example Cafe">
+          </div>
 
-    <!-- Contact Links -->
-    <section id="contact" class="contact-links">
-      <h2>Ready to Order? Contact Us</h2>
-      <p>Click below to start a conversation:</p>
-      <a href="https://www.instagram.com/fujitabrothers1007/" target="_blank">Instagram DM</a> | 
-      <a href="https://wa.me/your_number" target="_blank">WhatsApp</a> | 
-      <a href="mailto:your_email@example.com">Email Us</a>
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number / Country *</label>
+            <input type="tel" id="phone" name="phone" required placeholder="+1 123-456-7890 (USA)">
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message / Order Details *</label>
+            <textarea id="message" name="message" rows="6" required placeholder="Please enter your request, desired products, quantities, or sample inquiries here."></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+      </div>
+
+      <!-- Other Contact Links -->
+      <div class="contact-links">
+        <p style="margin: 0 0 10px 0; font-weight: bold;">Prefer Direct Messaging?</p>
+        <a href="https://www.instagram.com/fujitabrothers1007/" target="_blank">Instagram DM</a> | 
+        <a href="https://wa.me/your_number" target="_blank">WhatsApp</a>
+      </div>
     </section>
   </div>
 
