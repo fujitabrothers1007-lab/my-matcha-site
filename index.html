@@ -48,59 +48,42 @@
     section { margin-bottom: 60px; scroll-margin-top: 30px; }
     h2 { border-bottom: 2px solid var(--accent); padding-bottom: 10px; color: var(--primary); }
     
-    /* 4列横並び・コンパクト化のためのCSS */
-    .product-grid { 
-      display: grid; 
-      grid-template-columns: repeat(4, 1fr); 
-      gap: 15px; 
-      margin-top: 20px; 
-    }
-    
-    @media (max-width: 900px) {
-      .product-grid {
-        grid-template-columns: repeat(2, 1fr); /* タブレットサイズでは2列 */
-      }
+    /* Category Styles */
+    .category-title {
+      color: var(--primary);
+      font-size: 1.3rem;
+      margin-top: 30px;
+      margin-bottom: 15px;
+      padding-left: 10px;
+      border-left: 4px solid var(--primary);
     }
 
-    @media (max-width: 600px) {
-      .product-grid {
-        grid-template-columns: 1fr; /* スマホサイズでは1列 */
-      }
+    /* Product Grid Structure */
+    .product-grid { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); 
+      gap: 15px; 
+      margin-bottom: 30px; 
     }
 
     .product-card { 
       background: white; 
       border: 1px solid #eee; 
       border-radius: 8px; 
-      padding: 15px; 
+      padding: 20px 15px; 
       text-align: center; 
       box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
       font-size: 0.9rem;
     }
     .product-card h3 { 
       margin-top: 0; 
       color: var(--primary); 
       font-size: 1.1rem;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
     .product-card p {
-      margin: 6px 0;
+      margin: 8px 0;
     }
-    .btn-dm { 
-      display: inline-block; 
-      background: var(--primary); 
-      color: white; 
-      padding: 8px 12px; 
-      border-radius: 4px; 
-      text-decoration: none; 
-      font-weight: bold; 
-      margin-top: 12px;
-      font-size: 0.85rem;
-    }
-    .btn-dm:hover { background: var(--accent); }
     
     .step-list { padding-left: 20px; }
     .contact-links { text-align: center; padding: 20px; background: #eef3eb; border-radius: 8px; }
@@ -133,49 +116,48 @@
     <!-- Product Catalog -->
     <section id="products">
       <h2>Product Catalog</h2>
+
+      <!-- Category 1: Ceremonial -->
+      <h3 class="category-title">Ceremonial Grade Matcha</h3>
       <div class="product-grid">
-        
-        <!-- Item 1 -->
         <div class="product-card">
-          <div>
-            <h3>Ceremonial Grade Matcha</h3>
-            <p><strong>Usage:</strong> Traditional Drinking</p>
-            <p><strong>Package:</strong> 30g Tin / 100g Bag</p>
-            <p>Rich umami, smooth texture, vivid green color with zero bitterness.</p>
-          </div>
+          <h3>Ceremonial Grade Matcha</h3>
+          <p><strong>Usage:</strong> Traditional Drinking</p>
+          <p><strong>Package:</strong> 30g Tin / 100g Bag</p>
+          <p>Rich umami, smooth texture, vivid green color with zero bitterness.</p>
         </div>
-
-        <!-- Item 2 -->
-        <div class="product-card">
-          <div>
-            <h3>Culinary Grade Matcha</h3>
-            <p><strong>Usage:</strong> Lattes, Smoothies & Baking</p>
-            <p><strong>Package:</strong> 500g / 1kg Bag</p>
-            <p>Bold green tea flavor that holds up wonderfully against milk and sweet ingredients.</p>
-          </div>
-        </div>
-
-        <!-- Item 3 -->
-        <div class="product-card">
-          <div>
-            <h3>Cold Brew Green Tea</h3>
-            <p><strong>Usage:</strong> Cold Brew & Iced Tea</p>
-            <p><strong>Package:</strong> 100g Bag / Loose Leaf</p>
-            <p>Refreshing, crisp flavor with a naturally sweet taste and delicate umami.</p>
-          </div>
-        </div>
-
-        <!-- Item 4 -->
-        <div class="product-card">
-          <div>
-            <h3>Roasted Green Tea</h3>
-            <p><strong>Usage:</strong> Latte & Tea</p>
-            <p><strong>Package:</strong> 100g Bag / 500g Bag</p>
-            <p>Toasty, nutty aroma with a smooth, naturally low-caffeine sweetness.</p>
-          </div>
-        </div>
-
       </div>
+
+      <!-- Category 2: Culinary -->
+      <h3 class="category-title">Culinary Grade Matcha</h3>
+      <div class="product-grid">
+        <div class="product-card">
+          <h3>Culinary Grade Matcha</h3>
+          <p><strong>Usage:</strong> Lattes, Smoothies & Baking</p>
+          <p><strong>Package:</strong> 500g / 1kg Bag</p>
+          <p>Bold green tea flavor that holds up wonderfully against milk and sweet ingredients.</p>
+        </div>
+        <!-- 将来追加する商品はここに <div class="product-card">...</div> を並べていきます -->
+      </div>
+
+      <!-- Category 3: Loose Leaf & Tea -->
+      <h3 class="category-title">Green Tea & Hojicha</h3>
+      <div class="product-grid">
+        <div class="product-card">
+          <h3>Cold Brew Green Tea</h3>
+          <p><strong>Usage:</strong> Cold Brew & Iced Tea</p>
+          <p><strong>Package:</strong> 100g Bag / Loose Leaf</p>
+          <p>Refreshing, crisp flavor with a naturally sweet taste and delicate umami.</p>
+        </div>
+
+        <div class="product-card">
+          <h3>Roasted Green Tea</h3>
+          <p><strong>Usage:</strong> Latte & Tea</p>
+          <p><strong>Package:</strong> 100g Bag / 500g Bag</p>
+          <p>Toasty, nutty aroma with a smooth, naturally low-caffeine sweetness.</p>
+        </div>
+      </div>
+
     </section>
 
     <!-- How to Order -->
